@@ -1,0 +1,23 @@
+useSelector: to get something from a redux-store.
+useDispatch: to useDispatch something / send information.
+
+slice up scripts so they only are dependent on what you going to use it for. 
+(decouple)
+
+use a main store.js to combine them into a store where we can 'dispatch' and 'select' when needed.
+ 
+combine the slices/reducers and give them a key.
+///
+const rootReducer = combineReducers({
+    account: accountReducer,
+    customer: customerReducer
+})
+const store = createStore(rootReducer);
+
+export default store;
+///
+
+useSelector (get information)
+///
+  const customer = useSelector(store => store.customer.fullName)
+///
