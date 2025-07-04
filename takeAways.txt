@@ -19,5 +19,26 @@ export default store;
 
 useSelector (get information)
 ///
-  const customer = useSelector(store => store.customer.fullName)
+  const customer = useSelector(store => store.customer.fullName) //get fullName
+    const {loan: currentLoan, loanPurpose: currentLoanPurpose, balance} = useSelector(store => store.account);
+    //deconstruct the account reducer's values.
 ///
+
+useDispatch (send information)
+///
+  const dispatch = useDispatch(); //init
+    dispatch(deposit(depositAmount)); //use
+
+   export const deposit = (amount) => {
+    return { type: 'account/deposit', payload: amount } //action
+}
+///
+
+MIDDLEWARE:
+Perfect for async code,
+API Calls, timers, logging etc..
+The place for side effects.
+
+Reason: reducers needs to be pure functions, no async operations.
+
+Road: Component > dispatch > MIDDLEWARE > store
