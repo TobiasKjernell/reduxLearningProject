@@ -1,3 +1,5 @@
+Classic Redux:
+///
 useSelector: to get something from a redux-store.
 useDispatch: to useDispatch something / send information.
 
@@ -42,3 +44,37 @@ The place for side effects.
 Reason: reducers needs to be pure functions, no async operations.
 
 Road: Component > dispatch > MIDDLEWARE > store
+
+
+///
+INSTALL REDUX DEVTOOLS:
+
+1.Chrome plugin
+2.npm package: npm i redux-devtools-extension (--force if needed)
+3.usage: composeWithDevTools()
+
+///
+Redux-Toolkit: 
+modern and preferred way to write redux code.
+Redux best practices
+can use classic/old redux code with Toolkit.
+less code to achieve same result.
+action creators are auto created.
+sets up thunk-middleware automatic and devtools.
+
+// configureStore();
+less code needed, adds thunk/middleware auto
+
+//actions can only take 1 parameter.
+solution is by using a prepare method such as: 
+          prepare(amount, purpose) {
+                return {
+                    payload: {
+                        amount,
+                        purpose
+                    }
+                };
+            },
+
+before your reducer. OR you could put in a { object } in the paramter when calling
+your action.
