@@ -78,3 +78,33 @@ solution is by using a prepare method such as:
 
 before your reducer. OR you could put in a { object } in the paramter when calling
 your action.
+
+
+REDUX VS CONTEXTAPI
+
+ContextAPI:
+PRO// 
+ContextAPI+useReducers: already built into app
+Easy to set up a single context;
+
+CON//
+additional context needs a new setup (provider hell)
+no async operations
+performance optimization is a pain
+only react-devtools.
+
+Redux: 
+PRO//
+Once set up, easy to create additional slices.
+One provider
+supports middleware for async operations.
+out of box performance optimizations.
+very good devtools
+
+CON//
+Needs NPM package.
+Some work to set up.
+
+WHEN TO USE:
+ContextAPI: global state for small apps
+Redux: use in large apps
